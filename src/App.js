@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home'
+import PageContainer from './containers/PageContainer';
+import 'tailwindcss/tailwind.css';
+import './index.css'
+import { useSelector } from 'react-redux';
+import Card from './components/Card';
+import Detail from './pages/Detail';
 
 function App() {
+  const {drawer} =  useSelector(state => state.drawer)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <PageContainer>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='detail/:id' element={<Detail/>} />
+          </Routes>
+          {drawer && <Card />}
+          <Footer />
+        </PageContainer>
+      </BrowserRouter>
+
     </div>
   );
 }
