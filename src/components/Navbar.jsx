@@ -9,7 +9,7 @@ const Navbar = () => {
     useEffect(() => {
         const root = document.getElementById('root')
         if (color) {
-            root.style.backgroundColor = 'black';
+            root.style.backgroundColor = '#20262E';
             root.style.color = 'gray';
         } else {
             root.style.backgroundColor = 'white';
