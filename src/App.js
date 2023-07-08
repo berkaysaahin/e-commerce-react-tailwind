@@ -6,7 +6,7 @@ import PageContainer from './containers/PageContainer';
 import 'tailwindcss/tailwind.css';
 import './index.css'
 import { useSelector } from 'react-redux';
-import Card from './components/Card';
+import Cart from './components/Cart';
 import Detail from './pages/Detail';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='detail/:id' element={<Detail/>} />
           </Routes>
-          {drawer && <Card />}
+          {drawer && <Cart />}
           <Footer />
         </PageContainer>
       </BrowserRouter>

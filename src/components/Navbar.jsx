@@ -16,6 +16,7 @@ const Navbar = () => {
             root.style.color = 'black';
         }
 
+       // text-gray-500 dark:text-gray-400
 
     }, [color])
 

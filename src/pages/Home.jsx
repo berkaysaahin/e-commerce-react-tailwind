@@ -13,12 +13,14 @@ const Home = () => {
   }, [dispatch])
 
   return (
-    <div className='flex flex-wrap justify-center'>
-      {
-        products && products.map((prd, i) => (
-          <ProductCard key={i} prd={prd} />
-        ))
-      }
+    <div className='p-8'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8'>
+        {
+          products && products.map((prd, i) => (
+            <ProductCard key={i} prd={prd} />
+          ))
+        }
+      </div>
     </div>
   )
 }
